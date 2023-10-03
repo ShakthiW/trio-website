@@ -5,6 +5,9 @@ import TrioLogo from "../../public/images/profile/developer-pic-1.png";
 import AnimatedText from "@/components/AnimatedText";
 import Link from "next/link";
 import { LinkArrow } from "@/components/Icons";
+import HireUs from "@/components/HireUs";
+import LightBulb from "../../public/images/svgs/miscellaneous_icons_1.svg";
+
 
 export default function Home() {
   return (
@@ -47,7 +50,7 @@ export default function Home() {
                 <Link 
                   href="mailto:contact@trio.software" 
                   target={"_blank"} 
-                  className="ml-4"
+                  className="ml-4 text-lg font-medium capitalize text-dark underline"
                 >
                   Contact
                 </Link>
@@ -56,6 +59,12 @@ export default function Home() {
             </div>
           </div>
         </Layout>
+
+        <HireUs />
+
+        <div className=" absolute right-8 bottom-8 inline-block w-24">
+          <Image src={LightBulb} alt="Trio Software" className="w-full h-auto"></Image>
+        </div>
       </main>
     </>
   );
