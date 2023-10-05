@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 
 const useThemeSwitcher = () => {
   
@@ -10,7 +10,7 @@ const useThemeSwitcher = () => {
     const mediaQuery = window.matchMedia(preferDarkQuery)
     const userPref = window.localStorage.getItem("theme")
 
-    const handlePrefChange = () => {
+    const handleChange = () => {
       if(userPref) {
         let check = userPref === "dark" ? "dark" : "light"
         setmode(check)
@@ -34,9 +34,11 @@ const useThemeSwitcher = () => {
       }
     }
 
-    mediaQuery.addEventListener("change", handlePrefChange)
+    handleChange();
 
-    return () => mediaQuery.removeEventListener("change", handlePrefChange)
+    mediaQuery.addEventListener("change", handleChange)
+
+    return () => mediaQuery.removeEventListener("change", handleChange)
 
   }, [])
 
@@ -45,7 +47,8 @@ const useThemeSwitcher = () => {
     if(mode == "dark") {
       window.localStorage.setItem("theme", "dark")
       document.documentElement.classList.add("dark")
-    } else {
+    } 
+    if(mode == "light") {
       window.localStorage.setItem("theme", "light")
       document.documentElement.classList.remove("dark")
     }
