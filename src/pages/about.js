@@ -7,6 +7,7 @@ import ProfilePic from "../../public/images/profile/developer-pic-2.jpg";
 import { useInView, useMotionValue, useSpring } from "framer-motion";
 import Skills from "@/components/Skills";
 import Clients from "@/components/Clients";
+import TransitionEffect from "@/components/TransitionEffect";
 
 const AnimatedNumbers = ({ value }) => {
   const ref = useRef(null);
@@ -42,6 +43,8 @@ const about = () => {
           content="Trio Software is your partner in turning ideas into innovative web applications. We use our expertise in ReactJS, NextJS and web development to create solutions that are both user-friendly and effective."
         />
       </Head>
+
+      <TransitionEffect />
 
       <main className="flex w-full flex-col items-center justify-center dark:text-light">
         <Layout className="pt-16">
