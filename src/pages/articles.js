@@ -53,7 +53,7 @@ const MovingImg = ({ title, img, link }) => {
         ref={imgRef}
         src={img}
         alt={title}
-        className="z-10 w-96 h-auto hidden absolute rounded-lg"
+        className="z-10 w-96 h-auto hidden absolute rounded-lg md:!hidden"
       />
     </Link>
   );
@@ -65,10 +65,10 @@ const Article = ({ img, title, date, link }) => {
       initial={{ y: 200 }}
       whileInView={{ y: 0, transition: { duration: 0.5, ease: "easeInOut" } }}
       viewport={{ once: true }}
-      className="relative w-full p-4 py-6 my-4 rounded-xl flex items-center justify-between bg-light text-dark first:mt-0 border border-solid border-dark border-r-4 border-b-4 dark:border-light dark:bg-dark dark:text-light"
+      className="relative w-full p-4 py-6 my-4 rounded-xl flex items-center justify-between bg-light text-dark first:mt-0 border border-solid border-dark border-r-4 border-b-4 dark:border-light dark:bg-dark dark:text-light sm:flex-col"
     >
       <MovingImg title={title} img={img} link={link} />
-      <span className="text-primary font-semibold pl-4 dark:text-primaryDark">
+      <span className="text-primary font-semibold pl-4 dark:text-primaryDark sm:self-start sm:pl-0 xs:text-sm">
         {date}
       </span>
     </motion.li>
@@ -96,7 +96,7 @@ const FeaturedArticle = ({ img, title, time, summary, link }) => {
       </Link>
 
       <Link href={link} target="_blank">
-        <h2 className="capitalize text-2xl font-bold my-2 mt-4 hover:underline underline-offset-2">
+        <h2 className="capitalize text-2xl font-bold my-2 mt-4 hover:underline underline-offset-2 xs:text-lg">
           {title}
         </h2>
       </Link>
@@ -122,9 +122,9 @@ const articles = () => {
 
       <main className="w-full mb-16 flex flex-col items-center justify-center overflow-hidden dark:text-light">
         <Layout className="pt-16">
-          <AnimatedText text="Words Can Change The World!" className="mb-16" />
+          <AnimatedText text="Words Can Change The World!" className="mb-16 lg:!text-7xl sm:!mb-8 sm:!text-6xl xs:!text-4xl" />
 
-          <ul className="grid grid-cols-2 gap-16">
+          <ul className="grid grid-cols-2 gap-16 lg:gap-8 md:grid-cols-1 md:gap-y-16">
             <FeaturedArticle
               img={Article1}
               title="Build A Custom Pagination Component In Reactjs From Scratch"
