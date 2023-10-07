@@ -7,6 +7,7 @@ import Link from "next/link";
 import React from "react";
 import Project1 from "../../public/images/projects/crypto-screener-cover-image.jpg";
 import { motion } from "framer-motion";
+import TransitionEffect from "@/components/TransitionEffect";
 
 // has to define new component to use framer motion in a component
 const FramerImage = motion(Image);
@@ -121,6 +122,8 @@ const projects = () => {
           content="At Trio Software, we specialize in developing innovative web applications for a variety of industries, including healthcare, education, finance, and retail. We have a proven track record of success in delivering high-quality, user-friendly solutions that meet the specific needs of our clients."
         />
       </Head>
+
+      <TransitionEffect />
 
       <main className="w-full mb-16 flex flex-col items-center justify-center dark:text-light">
         <Layout className="pt-16">

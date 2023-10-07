@@ -13,6 +13,7 @@ import Article5 from "../../public/images/articles/smooth scrolling in reactjs.p
 import Article6 from "../../public/images/articles/todo list app built using react redux and framer motion.png";
 import Article7 from "../../public/images/articles/What is higher order component in React.jpg";
 import Article8 from "../../public/images/articles/What is Redux with easy explanation.png";
+import TransitionEffect from "@/components/TransitionEffect";
 
 // has to define new component to use framer motion in a component
 const FramerImage = motion(Image);
@@ -119,6 +120,8 @@ const articles = () => {
           content="Trio Software is your partner in turning ideas into innovative web applications. We use our expertise in ReactJS, NextJS and web development to create solutions that are both user-friendly and effective."
         />
       </Head>
+
+      <TransitionEffect />
 
       <main className="w-full mb-16 flex flex-col items-center justify-center overflow-hidden dark:text-light">
         <Layout className="pt-16">
